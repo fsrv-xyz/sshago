@@ -1,0 +1,11 @@
+[Unit]
+Description=SSH key agent written in Go
+
+[Service]
+Type=simple
+Environment=SSH_AUTH_SOCK=%T/%U-ssh-agent.socket
+ExecStart=%h/bin/sshago
+ExecStop=/bin/kill -s INT $MAINPID
+
+[Install]
+WantedBy=default.target
