@@ -1,0 +1,45 @@
+---
+project_name: sshago
+
+release:
+  draft: false
+  github:
+    owner: fsrv-xyz
+    name: sshago
+  name_template: 'Release {{.Tag}}'
+
+builds:
+  - id: sshago
+    main: .
+    binary: sshago
+    goos:
+      - darwin
+      - freebsd
+      - linux
+    goarch:
+      - amd64
+      - arm64
+
+archives:
+  - name_template: '{{.ProjectName}}-{{.Tag}}-{{.Os}}-{{.Arch}}{{if .Arm}}{{.Arm}}{{end}}'
+    wrap_in_directory: true
+    format: zip
+    files:
+      - LICENSE
+  - name_template: '{{.ProjectName}}-{{.Tag}}-{{.Os}}-{{.Arch}}{{if .Arm}}{{.Arm}}{{end}}'
+    id: targz-archives
+    wrap_in_directory: true
+    format: tar.gz
+    files:
+      - LICENSE
+
+checksum:
+  name_template: '{{ .ProjectName }}-v{{ .Version }}-checksums.txt'
+
+snapshot:
+  name_template: SNAPSHOT-{{ .Commit }}
+
+github_urls:
+  download: https://github.com
+
+dist: dist
