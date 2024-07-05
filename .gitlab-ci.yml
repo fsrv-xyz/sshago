@@ -8,5 +8,5 @@ stages:
 variables:
   SEMVER_PREFIX: v
 include:
-  - { project: fsrvcorp/templates, file: templates/language/go.yml, ref: 1.0.7 }
-  - { project: fsrvcorp/templates, file: templates/release/semver.yml, ref: 1.0.7 }
+  - { project: fsrvcorp/templates, file: templates/language/go.yml, ref: 1.0.8 }
+  - { project: fsrvcorp/templates, file: templates/release/semver.yml, ref: 1.0.8 }
