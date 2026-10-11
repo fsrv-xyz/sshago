@@ -2,7 +2,7 @@ module sshago
 
 go 1.25.0
 
-toolchain go1.27.1
+toolchain go1.27.2
 
 require golang.org/x/crypto v0.55.0
 
